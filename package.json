@@ -1,5 +1,6 @@
 {
   "name": "wrweb",
+  "homepage" : "https://joe90pilgrim.github.io/Woodland-Rise/",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
