@@ -1,0 +1,31 @@
+<div class="contact-content2">
+    <form [formGroup]='contactUsForm' novalidate>
+            <mat-form-field appearance='outline' class="field">
+                <mat-label>Name</mat-label>
+                <input style="height: 100%;" autocomplete="__away" cdkFocusInitial matInput 
+                formControlName="name">
+            </mat-form-field> <br>
+            
+            <mat-form-field appearance='outline' class="field">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field> <br>
+        
+            
+            <mat-form-field appearance='outline' class = "field">
+                <mat-label>Phone</mat-label>
+                <input autocomplete="__away" matInput formControlName="phone">
+            </mat-form-field> <br>
+    
+            
+            <mat-form-field appearance='outline' class="field">
+                <mat-label>Message</mat-label>
+                <textarea matInput formControlName="message"></textarea>
+            </mat-form-field>
+        
+        <div class="button-div">
+            <button mat-raised-button color="primary">Submit</button>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,41 @@
+<head>
+  <title>Woodland Rise Camping</title>
+  <!-- <link rel="stylesheet" href="../styles/style.css"> -->
+  <!-- <script type="text/javascript" src="../scripts/functions.js"></script> -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/200c61dbfe.js" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<div class="wrapper">
+  <div class="home-header">
+    <img src="assets/header-image-woodland-rise-camping.jpg" alt="Woodland Rise Header Photo">
+    <h1>Woodland Rise Camping and Caravan Park</h1>
+    <div class="mobile-header">
+      <img src="assets/mobile-image-woodland-rise.jpg" alt="Woodland Rise Camping Field">
+    </div>
+    <h2>Camping and Caravan Park for adults and children situated in the West Wales countryside</h2>
+  </div>
+
+  
+  <nav [ngClass]="{'sticky' : isSticky}">
+    <div class="menu" (click)="menuToggle()">
+      <hr>
+      <mat-icon class="menu_icon">menu</mat-icon>
+      <hr>
+    </div>
+    <ul id="menu-list">
+      <li><a href="#" routerLink="/" (click)="navTo()">Home</a></li>
+      <li><a href="#" routerLink="/gallery" (click)="navTo()">Gallery</a></li>
+      <li><a href="#" routerLink="/facilities" (click)="navTo()">Facilites</a></li>
+      <li><a href="#" routerLink="/attractions" (click)="navTo()">Attractions</a></li>
+      <li><a href="#" routerLink="/findus" (click)="navTo()">Find Us</a></li>
+      <li><a href="#" routerLink="/contactus" (click)="navTo()">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <router-outlet (activate)="getName()"></router-outlet>
+  </div>
+
+</div>
