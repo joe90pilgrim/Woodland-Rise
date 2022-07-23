@@ -1,7 +1,7 @@
 <div class=carousel>
 
     <div *ngIf="show" fxLayout="row" fxLayoutGap="2%" >
-        <mat-card *ngFor="let item of attractions.slice(strtNo,endNo)"
+        <mat-card *ngFor="let item of attractions.slice(strtNo - 1,endNo)"
          fxFlex="2 1 calc(33.3% - 5%)">
             <a href="{{item.link}}" target="_blank"><strong>{{item.title}}</strong> <br></a>
             {{item.text}}
@@ -16,6 +16,7 @@
     </div>
 
     <div class="carousel-icons">
+        <span class="attractions-numbers">{{strtNo}}-{{endNo}} of {{attractions.length}}</span>
         <mat-icon *ngIf="show" class=carousel-icon (click)="carouselItemUpdate('bck')">chevron_left</mat-icon>
         <mat-icon class=carousel-icon (click)="carouselItemUpdate('fwd')">chevron_right</mat-icon>
     </div>

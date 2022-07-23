@@ -10,7 +10,7 @@ export class AttractionsCarouselComponent implements OnInit {
   constructor() { }
 
 attractions: any;
-strtNo: number = 0;
+strtNo: number = 1;
 endNo: number = 3;
 show: boolean = true;
 
@@ -61,7 +61,7 @@ show: boolean = true;
   carouselItemUpdate(dir){
     if (dir = "fwd") {
       if (this.endNo>=this.attractions.length){
-        this.strtNo = 0;
+        this.strtNo = 1;
         this.endNo = 3;
       } else {
         this.strtNo = this.strtNo + 3;
@@ -69,7 +69,7 @@ show: boolean = true;
       }
     } else {
       if (this.strtNo<=this.attractions.length){
-        this.strtNo = 0;
+        this.strtNo = 1;
         this.endNo = 3;
       } else {
         this.strtNo = this.strtNo - 3;

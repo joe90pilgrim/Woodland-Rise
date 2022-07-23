@@ -1,9 +1,15 @@
 table {
     width: 100%;
     background-color: white;
-    text-align: left;
+    text-align: center;
   }
 
 td {
   color: black;
+  font-size: medium;
+}
+
+th {
+  font-size: large;
+  text-align: center;
 }

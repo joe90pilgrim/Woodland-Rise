@@ -2,9 +2,12 @@
   <title>Woodland Rise Camping</title>
   <!-- <link rel="stylesheet" href="../styles/style.css"> -->
   <!-- <script type="text/javascript" src="../scripts/functions.js"></script> -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/200c61dbfe.js" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.png" />
+  
 </head>
 
 <div class="wrapper">
@@ -25,7 +28,7 @@
       <hr>
     </div>
     <ul id="menu-list">
-      <li><a href="#" routerLink="/" (click)="navTo()">Home</a></li>
+      <li><a [ngClass]="{'menu-icon-selected' : activeURL == '/'}" href="#" routerLink="/" (click)="navTo()">Home</a></li>
       <li><a href="#" routerLink="/gallery" (click)="navTo()">Gallery</a></li>
       <li><a href="#" routerLink="/facilities" (click)="navTo()">Facilites</a></li>
       <li><a href="#" routerLink="/attractions" (click)="navTo()">Attractions</a></li>
