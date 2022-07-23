@@ -126,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "wrweb"
+  "defaultProject": "wrweb",
+  "cli": {
+    "analytics": false
+  }
 }
