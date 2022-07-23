@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FacilitiesTableComponent } from './facilities/facilities-table/facilities-table.component';
 import {MatTableModule} from '@angular/material/table';
 import { AttractionsCarouselComponent } from './attractions/attractions-carousel/attractions-carousel.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 const routes: Routes = [
@@ -59,6 +60,7 @@ const routes: Routes = [
     FormsModule,
     MatInputModule,
     MatButtonModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

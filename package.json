@@ -1,6 +1,6 @@
 {
   "name": "wrweb",
-  "homepage" : "https://joe90pilgrim.github.io/Woodland-Rise/",
+  "homepage": "https://joe90pilgrim.github.io/Woodland-Rise/",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -23,7 +23,13 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "@fortawesome/angular-fontawesome": "^0.11.1",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "angular": "^1.6.10",
+    "angular-font-awesome": "^3.1.2",
+    "font-awesome": "^4.7.0",
     "material": "^0.4.3",
     "material-icons": "^0.5.1",
     "rxjs": "~6.6.0",
