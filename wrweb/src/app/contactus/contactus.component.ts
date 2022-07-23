@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormArray, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, FormControl, FormArray, UntypedFormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,9 +9,9 @@ import { FormGroup, FormControl, FormArray, FormBuilder, Validators } from '@ang
 })
 export class ContactusComponent implements OnInit {
 
-  contactUsForm: FormGroup;
+  contactUsForm: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder)
+  constructor(private fb: UntypedFormBuilder)
    { this.buildForm();}
 
   ngOnInit(): void {

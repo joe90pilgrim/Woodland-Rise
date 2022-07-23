@@ -113,7 +113,6 @@
       }
     }
   },
-  "defaultProject": "wrweb",
   "cli": {
     "analytics": false
   }
