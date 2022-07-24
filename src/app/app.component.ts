@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { faTwitter,  faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 
 @Component({
@@ -9,7 +10,6 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   activeURL: string;
-  // faCoffee = faCoffee;
 
   constructor(private router: Router) {
   }
@@ -17,6 +17,10 @@ export class AppComponent implements OnInit {
   title = 'Woodland Rise Camping and Caravan Park';
   isSticky: boolean = false;
   isMobile: boolean = false;
+  faFacebook = faFacebookF;
+  faGoogle = faGoogle;
+  faTwitter = faTwitter;
+  
 
   ngOnInit(): void {
     this.checkMobile();
@@ -44,6 +48,7 @@ export class AppComponent implements OnInit {
       if (e instanceof NavigationEnd) {
         this.activeURL = e.url;
         console.log(this.activeURL, 'active url');
+        this.menuToggle();
       }
     });
   }

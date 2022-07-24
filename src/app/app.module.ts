@@ -22,6 +22,10 @@ import { FacilitiesTableComponent } from './facilities/facilities-table/faciliti
 import {MatTableModule} from '@angular/material/table';
 import { AttractionsCarouselComponent } from './attractions/attractions-carousel/attractions-carousel.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
+import { ContactusService } from './contactus/contactus.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PrivacyNoticeComponent } from './privacynotice/privacynotice.component';
 
 
 const routes: Routes = [
@@ -31,6 +35,7 @@ const routes: Routes = [
   { path: 'facilities', component: FacilitiesComponent },
   { path: 'contactus', component: ContactusComponent },
   { path: 'attractions', component: AttractionsComponent },
+  { path: 'privacynotice', component: PrivacyNoticeComponent },
 ];
 
 @NgModule({
@@ -44,7 +49,8 @@ const routes: Routes = [
     FindusComponent,
     ContactusComponent,
     FacilitiesTableComponent,
-    AttractionsCarouselComponent
+    AttractionsCarouselComponent,
+    PrivacyNoticeComponent
   ],
   imports: [
     BrowserModule,
@@ -60,9 +66,11 @@ const routes: Routes = [
     FormsModule,
     MatInputModule,
     MatButtonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [ContactusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

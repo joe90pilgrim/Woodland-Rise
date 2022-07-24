@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormGroup, FormControl, FormArray, UntypedFormBuilder, Validators } from '@angular/forms';
+import { ContactusService } from './contactus.service';
+// import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -11,7 +13,7 @@ export class ContactusComponent implements OnInit {
 
   contactUsForm: UntypedFormGroup;
 
-  constructor(private fb: UntypedFormBuilder)
+  constructor(private fb: UntypedFormBuilder, private contactService: ContactusService)
    { this.buildForm();}
 
   ngOnInit(): void {
@@ -24,6 +26,20 @@ export class ContactusComponent implements OnInit {
     phone: '',
     message: ''
     });
+  }
+
+  sendFormEmail(){
+    const dataToSend = this.contactUsForm.value;
+    if (dataToSend) {
+      this.contactService.PostMessage(dataToSend)
+        .subscribe(response => {
+          location.href = 'https://mailthis.to/confirm';
+          this.contactUsForm.reset();
+        }, error => {
+          console.warn(error.responseText)
+          console.log({ error })
+          })
+    }
   }
 
 }
