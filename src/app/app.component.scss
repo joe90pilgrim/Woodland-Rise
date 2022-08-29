@@ -11,16 +11,20 @@
 }  
 
 .sticky {
-  position: sticky;
+  position: fixed;
   top: 0px;
   margin: 0 auto;
   background-color:white;
-  width: 100%;
+  // width: 100%;
   z-index: 50;
 }
 
+.header {
+  margin-top: 80px;
+}
+
 nav {
-  width: 75%;
+  width: 100%;
   margin: 0 auto;
 }
 

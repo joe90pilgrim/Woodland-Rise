@@ -1,6 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { NavigationEnd, Router } from '@angular/router';
 import { faTwitter,  faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { CookiePopupComponent } from './home/cookie-popup/cookie-popup.component';
 
 
 @Component({
@@ -11,7 +13,7 @@ import { faTwitter,  faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-
 export class AppComponent implements OnInit {
   activeURL: string;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private dialog: MatDialog) {
   }
 
   title = 'Woodland Rise Camping and Caravan Park';
@@ -24,6 +26,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkMobile();
+    this.menuToggle();
+    this.openPopUp();
     this.activatedNavLink();
   }
 
@@ -40,7 +44,7 @@ export class AppComponent implements OnInit {
   }
 
   navTo() {
-    window.scrollTo(0, 250);
+    // window.scrollTo(0, 250);
   }
 
   activatedNavLink() {
@@ -70,7 +74,31 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
-    this.isSticky = window.pageYOffset >= 525;
+    this.isSticky = window.pageYOffset >= 125;
+    this.checkMobile();
+  }
+
+  getCookie(name) {
+    var match = document.cookie.match(RegExp('(?:^|;\\s*)' + name + '=([^;]*)')); 
+    return match ? match[1] : null;
+}
+
+  openPopUp() {
+    const cookieCheck = this.getCookie('consent');
+    console.log(cookieCheck, 'cookies')
+    if (!cookieCheck) {
+      let dialogRef = this.dialog.open(CookiePopupComponent, {
+        height: '400px',
+        width: '600px',
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+      var date = new Date().toDateString()
+      console.log(date);
+      document.cookie = "consent=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; SameSite=Strict";
+        }
+      )
+    }
   }
 }
 
