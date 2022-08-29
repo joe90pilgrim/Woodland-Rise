@@ -17,11 +17,11 @@
   </div>
   <ul id="menu-list">
     <li><a [ngClass]="{'menu-icon-selected' : activeURL == '/'}" href="#" routerLink="/">Home</a></li>
-    <li><a href="#" routerLink="/gallery" (click)="navTo()">Gallery</a></li>
-    <li><a href="#" routerLink="/facilities" (click)="navTo()">Park Facilities</a></li>
-    <li><a href="#" routerLink="/attractions" (click)="navTo()">Nearby</a></li>
-    <li><a href="#" routerLink="/findus" (click)="navTo()">Find Us</a></li>
-    <li><a href="#" routerLink="/contactus" (click)="navTo()">Contact</a></li>
+    <li><a [ngClass]="{'menu-icon-selected' : activeURL == '/gallery'}" href="#" routerLink="/gallery" (click)="navTo()">Gallery</a></li>
+    <li><a [ngClass]="{'menu-icon-selected' : activeURL == '/facilities'}" href="#" routerLink="/facilities" (click)="navTo()">Park Facilities</a></li>
+    <li><a [ngClass]="{'menu-icon-selected' : activeURL == '/attractions'}" href="#" routerLink="/attractions" (click)="navTo()">Nearby</a></li>
+    <li><a [ngClass]="{'menu-icon-selected' : activeURL == '/findus'}" href="#" routerLink="/findus" (click)="navTo()">Find Us</a></li>
+    <li><a [ngClass]="{'menu-icon-selected' : activeURL == '/contactus'}" href="#" routerLink="/contactus" (click)="navTo()">Contact</a></li>
     <li><a href="https://secure.hotels.uk.com/bookings/#/booking/45131/items/availability?k=2E0SI2T4nGMeW8wFpducAdIugNDUxMzE=" target="_blank" rel="noopener" (click)="navTo()">Book Now</a></li>
   </ul>
 </nav>
