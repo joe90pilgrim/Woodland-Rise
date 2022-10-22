@@ -7,7 +7,7 @@ export interface facilitiesInterface {
 
 const FEATURES: any = [
   {position: 1, siteFacility: '5 Hardstanding piches', feature: 'With electric hookup'},
-  {position: 2, siteFacility: '10 grass piches', feature: '	Optional electric hookup for tenets'},
+  {position: 2, siteFacility: '10 grass piches', feature: '	Optional electric hookup for tents'},
   {position: 3, siteFacility: '2 heated wet rooms', feature: 'Both with shower and toilets'},
   {position: 4, siteFacility: '2 heated washrooms', feature: 'Both with toilets, one with baby change facility'},
   {position: 5, siteFacility: 'Caravan specific items available', feature: 'Gas sold here'},
