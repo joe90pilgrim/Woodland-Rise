@@ -25,7 +25,7 @@ show: boolean = true;
       id: 1,
       title: 'Gwili Steam Railway',
       link: 'http://www.gwili-railway.co.uk/',
-      text: 'The Gwili Steam Railway company runs a  service from Bronwydd along a preserved section of the old Carmarthen-Aberystwyth line. (About 6 miles/14 minutes drive from Woodland Rise)'
+      text: 'The Gwili Steam Railway company runs a  service from Bronwydd along a preserved section of the old Carmarthen-Aberystwyth line. (About 8 miles/14 minutes drive from Woodland Rise)'
     },{
       id: 2,
       title: 'Dylan Thomas Boathouse',

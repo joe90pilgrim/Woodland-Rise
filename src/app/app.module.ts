@@ -29,6 +29,7 @@ import { PrivacyNoticeComponent } from './privacynotice/privacynotice.component'
 import { NgxGoogleAnalyticsModule, NGX_GOOGLE_ANALYTICS_INITIALIZER_PROVIDER } from 'ngx-google-analytics';
 import { CookiePopupComponent } from './home/cookie-popup/cookie-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ContentfulService } from './external-services/contentful/contentful.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
@@ -75,7 +76,7 @@ const routes: Routes = [
     NgxGoogleAnalyticsModule.forRoot('G-FZ9E8QE4EF'),
     MatDialogModule
   ],
-  providers: [ContactusService],
+  providers: [ContactusService, ContentfulService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -30,6 +30,8 @@ export class AppComponent implements OnInit {
     this.activatedNavLink();
   }
 
+
+
   checkMobile() {
     if (window.innerWidth < 769) {
       this.isMobile = true;
