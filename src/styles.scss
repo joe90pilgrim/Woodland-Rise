@@ -58,7 +58,7 @@ h3 {
 
 .wrapper {
     margin: 0 auto;
-    width: 80%;
+    max-width: 75%;
     min-height: 85vh;
 }
 
@@ -81,7 +81,7 @@ div.container {
     display: none;
     padding-left: 0px;
     font-weight: 500;
-    background-color: #d2d2d7;
+    // background-color: #d2d2d7;
 }
 
 
@@ -123,6 +123,7 @@ div.home-content {
     padding-left: 1%;
     padding-right: 1%;
     margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 
@@ -130,9 +131,9 @@ div.home-content {
 
 .home-content p {
     font-family: 'Roboto', sans-serif;
-    text-align: center;
+    text-align: left;
     font-size: 20px !important;
-    line-height: 2;
+    line-height: 1.75;
 }
 
 .home-button-center {
@@ -333,8 +334,8 @@ hr {
     #menu-list {
         display: flex;
         text-align: center;
-        /* border: #000053 solid 2px; */
-        /* border-radius: 5px; */
+        max-width: 1000px;
+        margin: 0 auto;
     }
 
     ul li {
