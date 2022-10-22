@@ -4,7 +4,6 @@ import { NavigationEnd, Router } from '@angular/router';
 import { faTwitter,  faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { CookiePopupComponent } from './home/cookie-popup/cookie-popup.component';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
