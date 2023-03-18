@@ -37,6 +37,8 @@ export class ContentfulService {
       case 'welcomeText2':
         contentId = "qlldoArrMSDd4zK5IvQVA";
         break;
+      case 'bookingLink':
+        contentId = "6WsVV03eiDisab5Zsh76UZ"
     }
     return contentId;
   }

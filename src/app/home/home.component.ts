@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
   
   welcomeText1: string = null;
   welcomeText2: string = null;
+  bookingLink: string = null;
 
   constructor(private content: ContentfulService) { }
 
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getContentfulContent('welcomeText1');
     this.getContentfulContent('welcomeText2');
+    this.getContentfulContent('bookingLink');
   }
 
   getContentfulContent(content) {

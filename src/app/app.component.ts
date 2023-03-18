@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NavigationEnd, Router } from '@angular/router';
 import { faTwitter,  faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { ContentfulService } from './external-services/contentful/contentful.service';
 import { CookiePopupComponent } from './home/cookie-popup/cookie-popup.component';
 
 @Component({
@@ -11,8 +12,9 @@ import { CookiePopupComponent } from './home/cookie-popup/cookie-popup.component
 })
 export class AppComponent implements OnInit {
   activeURL: string;
+  bookingLink: string = null;
 
-  constructor(private router: Router, private dialog: MatDialog) {
+  constructor(private router: Router, private dialog: MatDialog, private content: ContentfulService) {
   }
 
   title = 'Woodland Rise Camping and Caravan Park';
@@ -28,6 +30,7 @@ export class AppComponent implements OnInit {
     this.menuToggle();
     this.openPopUp();
     this.activatedNavLink();
+    this.getContentfulContent('bookingLink');
   }
 
 
@@ -58,6 +61,12 @@ export class AppComponent implements OnInit {
     });
   }
 
+  getContentfulContent(content) {
+    let contentToFind = this.content.getContentId(content)
+    this.content.getContent(contentToFind).subscribe(response => {
+      this[content] = response.fields['text'];
+    });
+  }
 
   menuToggle() {
     this.checkMobile();
