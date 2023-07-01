@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NavigationEnd, Router } from '@angular/router';
 import { faTwitter,  faFacebookF, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
 import { ContentfulService } from './external-services/contentful/contentful.service';
 import { CookiePopupComponent } from './home/cookie-popup/cookie-popup.component';
 
@@ -14,7 +15,16 @@ export class AppComponent implements OnInit {
   activeURL: string;
   bookingLink: string = null;
 
-  constructor(private router: Router, private dialog: MatDialog, private content: ContentfulService) {
+  constructor(private router: Router, private dialog: MatDialog, private content: ContentfulService, private gtmService: GoogleTagManagerService) {
+    this.router.events.forEach(item => {
+      if (item instanceof NavigationEnd) {
+        const gtmTag = {
+          event: 'page',
+          pageName: item.url
+        };
+        this.gtmService.pushTag(gtmTag);
+      }
+    });
   }
 
   title = 'Woodland Rise Camping and Caravan Park';
@@ -23,6 +33,7 @@ export class AppComponent implements OnInit {
   faFacebook = faFacebookF;
   faGoogle = faGoogle;
   faTwitter = faTwitter;
+  
   
 
   ngOnInit(): void {

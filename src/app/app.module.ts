@@ -72,9 +72,10 @@ const routes: Routes = [
     FontAwesomeModule,
     HttpClientModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
   ],
-  providers: [ContactusService, ContentfulService],
+  providers: [ContactusService, ContentfulService,  {provide: 'googleTagManagerId', useValue: 
+  'GTM-PFP4XNL'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
