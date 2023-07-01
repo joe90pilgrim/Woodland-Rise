@@ -6,9 +6,10 @@
 
         <div class="grid-container">
             <div class="grid-image">
-                <!-- <img src="assets/gallery/1.jpg" alt="Caravan">
-                 -->
-                 <img src="{{ image1url }}" alt="Caravan">
+                <a href="#" [routerLink]="['/image-viewer', 'image1']"> 
+                    <img src="{{ image1url }}" alt="Caravan">
+                </a>
+                 
             </div>
             <div  class="grid-image">
                 <img src="{{ image2url }}" alt="Dog">

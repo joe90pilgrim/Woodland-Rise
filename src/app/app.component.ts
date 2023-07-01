@@ -14,6 +14,7 @@ import { CookiePopupComponent } from './home/cookie-popup/cookie-popup.component
 export class AppComponent implements OnInit {
   activeURL: string;
   bookingLink: string = null;
+  menuOpen: boolean;
 
   constructor(private router: Router, private dialog: MatDialog, private content: ContentfulService, private gtmService: GoogleTagManagerService) {
     this.router.events.forEach(item => {
@@ -66,11 +67,19 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         this.activeURL = e.url;
-        console.log(this.activeURL, 'active url');
-        this.menuToggle();
+        // console.log(this.activeURL, 'active url');
+        this.menuClose();
       }
     });
   }
+
+menuClose() {
+  this.checkMobile();
+  if (this.isMobile) {
+    let x = document.getElementById("menu-list");
+    x.style.display = "none";
+  }
+}
 
   getContentfulContent(content) {
     let contentToFind = this.content.getContentId(content)
@@ -83,7 +92,7 @@ export class AppComponent implements OnInit {
     this.checkMobile();
     if (this.isMobile) {
       let x = document.getElementById("menu-list");
-      if (x.style.display === "none" || x.style.display == '') {
+      if (x.style.display === "none" || x.style.display == '' || this.menuOpen == false) {
         x.style.paddingTop = "30px";
         x.style.paddingBottom = "30px";
         x.style.display = "block";

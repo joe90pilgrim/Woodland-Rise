@@ -29,6 +29,8 @@ import { PrivacyNoticeComponent } from './privacynotice/privacynotice.component'
 import { CookiePopupComponent } from './home/cookie-popup/cookie-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ContentfulService } from './external-services/contentful/contentful.service';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { ImageViewerComponent } from './gallery/image-viewer/image-viewer.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
@@ -38,6 +40,7 @@ const routes: Routes = [
   { path: 'contactus', component: ContactusComponent },
   { path: 'attractions', component: AttractionsComponent },
   { path: 'privacynotice', component: PrivacyNoticeComponent },
+  { path: 'image-viewer/:url', component: ImageViewerComponent },
 ];
 
 @NgModule({
@@ -53,7 +56,8 @@ const routes: Routes = [
     FacilitiesTableComponent,
     AttractionsCarouselComponent,
     PrivacyNoticeComponent,
-    CookiePopupComponent
+    CookiePopupComponent,
+    ImageViewerComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +77,7 @@ const routes: Routes = [
     HttpClientModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatGridListModule
   ],
   providers: [ContactusService, ContentfulService,  {provide: 'googleTagManagerId', useValue: 
   'GTM-PFP4XNL'}],
