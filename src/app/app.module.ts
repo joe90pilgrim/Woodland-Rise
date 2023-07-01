@@ -26,7 +26,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactusService } from './contactus/contactus.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PrivacyNoticeComponent } from './privacynotice/privacynotice.component';
-import { NgxGoogleAnalyticsModule, NGX_GOOGLE_ANALYTICS_INITIALIZER_PROVIDER } from 'ngx-google-analytics';
 import { CookiePopupComponent } from './home/cookie-popup/cookie-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ContentfulService } from './external-services/contentful/contentful.service';
@@ -73,7 +72,6 @@ const routes: Routes = [
     FontAwesomeModule,
     HttpClientModule,
     MatSnackBarModule,
-    NgxGoogleAnalyticsModule.forRoot('G-FZ9E8QE4EF'),
     MatDialogModule
   ],
   providers: [ContactusService, ContentfulService],
