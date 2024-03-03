@@ -1,17 +1,26 @@
-
 <div class="home-content">
-     <p class="has-text-align-center" [innerHTML]="this.welcomeText1"></p>
+    <p class="has-text-align-center" [innerHTML]="this.welcomeText1"></p>
 
     <div align="left" style="margin-top: 25px; margin-bottom: 50px;">
-        <a style="color:white; background-color: #2f5349; padding: 15px; font-size:16px; text-decoration:none; border-radius:5px; font-family: arial" href="{{this.bookingLink}}" target="_blank" rel="noopener"> Book Now</a>
+        <a style="color:white; background-color: #2f5349; padding: 15px; font-size:16px; text-decoration:none; border-radius:5px; font-family: arial"
+            href="{{this.bookingLink}}" target="_blank" rel="noopener"> Book Now</a>
     </div>
 
-     <p class="has-text-align-center" [innerHTML]="this.welcomeText2"></p>
-  
+    <p class="has-text-align-center" [innerHTML]="this.welcomeText2"></p>
+
 </div>
 
-
-
-
-
-
+<style>
+    @media only screen and (min-width: 440px) {
+        .notice {
+            position: relative;
+            top: -72px;
+            left: 90px;
+        }
+    }
+</style>
+<div>
+    <img style="margin-bottom: 50px;" src="../../assets/Camping-and-Caravanning-Club-Logo.svg"
+        alt="Camping and Caravanning Club logo">
+    <p class="notice">A certificated site for members of the club only</p>
+</div>
