@@ -45,3 +45,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#Github Required Files
+docs/CNAME
+docs/404.html
+docs/CNAME
+docs/404.html
